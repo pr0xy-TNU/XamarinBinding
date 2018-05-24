@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             
+             x:Class="McuRegister.Pages.TrailerPage">
+    <StackLayout x:Name="TrailerInfo">
+        <Label Text="Company"/>
+        <Entry x:Name="company" Text="{Binding Company}"/>
+        <Label Text="McuSerialNumber"/>
+        <Entry x:Name="McuSerialNumber" Text="{Binding McuSerialNumber}"/>
+        <Label Text="LandmarkSerialNumber" />
+        <Entry x:Name="LandmarkSerialNumber" Text="{Binding LandmarkSerialNumber}"/>
+        <Label Text="Trailer Id" />
+        <Entry x:Name="Id" Text="{Binding Id}"/>
+        <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+            <Button x:Name="Add" Text="Add" Command="{Binding ListPageModel.SaveTrailerCommand}" CommandParameter="{Binding}"/>
+            <Button x:Name="Delete"  Text="Delete" Command="{Binding ListPageModel.DeleteTrailerCommand}" CommandParameter="{Binding}"/>
+            <Button x:Name="Back" Text="Back" Command="{Binding Path=ListPageModel.BackCommand}"/>
+        </StackLayout>
+
+    </StackLayout>
+</ContentPage>
